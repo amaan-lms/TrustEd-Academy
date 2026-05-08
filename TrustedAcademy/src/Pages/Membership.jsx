@@ -1,119 +1,151 @@
 import React, { useState } from 'react';
-import { Check, Minus, Plus, ShieldCheck, Zap, Globe, Users, Download } from 'lucide-react';
+import {
+  Hammer,
+  Leaf,
+  BriefcaseBusiness,
+  Cpu,
+  HeartPulse,
+  Scale,
+  Brain,
+  GraduationCap,
+  ArrowRight,
+  ChevronRight,
+  Target
+} from 'lucide-react';
 
-const Membership = () => {
-  const [openFaq, setOpenFaq] = useState(null);
+const EducationHub = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
 
-  const faqs = [
-    {
-      q: "What is included in membership?",
-      a: "Membership includes unlimited access to our entire core course library, our proprietary AI learning assistant, downloadable frameworks, and entry into our private student community."
-    },
-    {
-      q: "Can I cancel anytime?",
-      a: "Yes. You have full control over your subscription through your member dashboard. There are no long-term contracts or hidden exit fees."
-    },
-    {
-      q: "Do I get all courses?",
-      a: "You receive access to all Core and Advanced courses within the Academy library. Specialized Business Services and 'Done-For-You' implementations are separate tier offerings."
-    }
+  const categories = [
+    { title: 'Skilled Trades', icon: Hammer, items: ['Carpentry', 'Welding', 'Plumbing', 'Electrical', 'HVAC', 'Mechanics', 'Construction', 'Equipment Operation'] },
+    { title: 'Self-Sufficiency', icon: Leaf, items: ['Homesteading', 'Soil Growing', 'Hydroponics', 'Food Storage', 'Water Systems', 'Permaculture', 'Sustainable Living'] },
+    { title: 'Entrepreneurship', icon: BriefcaseBusiness, items: ['Startup & Scaling', 'Business Structure', 'Operations', 'Finance & Accounting', 'Marketing & Sales', 'Automation', 'E-Commerce'] },
+    { title: 'Technology & AI', icon: Cpu, items: ['Artificial Intelligence', 'Software Systems', 'Digital Marketing', 'Online Business', 'Cybersecurity', 'Data & Analytics', 'Productivity Tools'] },
+    { title: 'Health & Wellness', icon: HeartPulse, items: ['Nutrition', 'Fitness', 'Preventative Health', 'Mental Wellness', 'Herbal Knowledge', 'First Aid'] },
+    { title: 'Professional Knowledge', icon: Scale, items: ['Law Fundamentals', 'Medical Concepts', 'Nursing Education', 'Paralegal Studies', 'Consulting Skills', 'Administrative Skills'] },
+    { title: 'Personal Development', icon: Brain, items: ['Mindset', 'Leadership', 'Communication', 'Critical Thinking', 'Discipline', 'Time Management', 'Financial Literacy'] },
+    { title: 'Family & Education', icon: GraduationCap, items: ['Homeschooling', 'Child Development', 'Parenting Skills', 'Character Building', 'Life Skills', 'Creative Arts'] },
   ];
 
   return (
-    <section id="membership" className="py-24 bg-black text-white relative pt-30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section className="relative min-h-screen bg-[#050505] text-white py-24 overflow-hidden font-sans">
+      
+      {/* Background Refinement */}
+      <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-[#C8A96A]/20 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-[#C8A96A]/10 blur-[120px] rounded-full" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         
-        {/* Section Header */}
-        <div className="max-w-3xl mb-20">
-          <p className="text-[#D4AF37] uppercase tracking-[0.4em] text-xs font-bold mb-4">Elite Access</p>
-          <h2 className="text-4xl md:text-6xl font-serif mb-6 leading-tight">Access the Full <br /><span className="italic text-gray-500">Learning System</span></h2>
-          <p className="text-gray-400 text-lg font-light leading-relaxed">
-            Membership unlocks structured learning paths, advanced courses, AI support, and continuous education designed to help you grow with precision.
+        {/* --- COMPACT HEADER --- */}
+        <div className="mb-16 border-l-2 border-[#C8A96A] pl-8">
+          <div className="flex items-center gap-3 mb-4">
+            <Target className="w-4 h-4 text-[#C8A96A]" />
+            <span className="text-[#C8A96A] uppercase tracking-[0.4em] text-[10px] font-black">
+              System Infrastructure v2.0
+            </span>
+          </div>
+          <h2 className="text-4xl md:text-5xl font-serif uppercase tracking-tight leading-none mb-4">
+            Education <span className="text-[#C8A96A]  font-light ">Hub</span>
+          </h2>
+          <p className="max-w-xl text-[#777] text-sm leading-relaxed">
+            A centralized ecosystem covering practical trades, technology, and real-world knowledge development. Select a sector to initialize modules.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-12 gap-12">
+        {/* --- DASHBOARD LAYOUT --- */}
+        <div className="grid lg:grid-cols-[320px_1fr] gap-6 items-start">
           
-          {/* Main Membership Card (LHS) */}
-          <div className="lg:col-span-7 bg-[#001233]/20 border border-[#D4AF37]/30 p-8 md:p-12 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#D4AF37] opacity-[0.03] -mr-16 -mt-16 rounded-full"></div>
-            
-            <div className="grid md:grid-cols-2 gap-12">
-              {/* Includes */}
-              <div>
-                <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-8 border-b border-white/10 pb-4">Inclusive Features</h4>
-                <ul className="space-y-4">
-                  {[
-                    { text: 'Full course access', icon: <Globe size={14}/> },
-                    { text: 'AI learning assistant', icon: <Zap size={14}/> },
-                    { text: 'Guided learning paths', icon: <ShieldCheck size={14}/> },
-                    { text: 'Downloadable resources', icon: <Download size={14}/> },
-                    { text: 'Community access', icon: <Users size={14}/> }
-                  ].map((item, i) => (
-                    <li key={i} className="flex items-center text-sm text-gray-300 font-light group">
-                      <span className="text-[#D4AF37] mr-3 group-hover:scale-110 transition-transform">{item.icon}</span>
-                      {item.text}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Benefits */}
-              <div>
-                <h4 className="text-white text-xs font-bold uppercase tracking-widest mb-8 border-b border-white/10 pb-4">Core Benefits</h4>
-                <ul className="space-y-4">
-                  {['Learn at your own pace', 'Structured growth', 'Ongoing updates', 'Real-world application'].map((item, i) => (
-                    <li key={i} className="flex items-center text-sm text-gray-400 italic">
-                      <Check size={12} className="text-[#D4AF37] mr-3" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* CTA Area */}
-            <div className="mt-16 pt-8 border-t border-white/5">
-              <button className="w-full py-5 bg-[#D4AF37] text-black font-bold uppercase tracking-[0.3em] text-xs hover:bg-white transition-all duration-500 shadow-2xl">
-                Become a Member
-              </button>
-              <p className="mt-6 text-center text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.2em] animate-pulse">
-                Lock in early access pricing before full launch pricing increases.
-              </p>
-            </div>
+          {/* SIDE NAVIGATION */}
+          <div className="grid grid-cols-1 gap-2">
+            {categories.map((cat, idx) => {
+              const Icon = cat.icon;
+              const active = activeIndex === idx;
+              return (
+                <button
+                  key={idx}
+                  onMouseEnter={() => setActiveIndex(idx)}
+                  className={`group flex items-center justify-between p-4 border transition-all duration-300 ${
+                    active 
+                    ? 'bg-[#C8A96A] border-[#C8A96A] shadow-[0_0_20px_rgba(200,169,106,0.2)]' 
+                    : 'bg-white/[0.03] border-white/5 hover:border-white/20'
+                  }`}
+                >
+                  <div className="flex items-center gap-4">
+                    <Icon className={`w-4 h-4 ${active ? 'text-black' : 'text-[#C8A96A]'}`} />
+                    <span className={`text-[11px] uppercase tracking-[0.15em] font-bold ${active ? 'text-black' : 'text-white/70'}`}>
+                      {cat.title}
+                    </span>
+                  </div>
+                  <ChevronRight className={`w-3 h-3 ${active ? 'text-black' : 'opacity-0'}`} />
+                </button>
+              );
+            })}
           </div>
 
-          {/* FAQ & Exclusions (RHS) */}
-          <div className="lg:col-span-5 flex flex-col justify-between">
-            {/* FAQ Accordion */}
-            <div className="space-y-4 mb-12">
-              <h4 className="text-gray-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-6">Frequently Asked</h4>
-              {faqs.map((faq, i) => (
-                <div key={i} className="border-b border-white/10 pb-4 cursor-pointer" onClick={() => setOpenFaq(openFaq === i ? null : i)}>
-                  <div className="flex justify-between items-center py-2">
-                    <span className="text-sm font-medium text-white hover:text-[#D4AF37] transition-colors">{faq.q}</span>
-                    {openFaq === i ? <Minus size={14} className="text-[#D4AF37]"/> : <Plus size={14} className="text-gray-600"/>}
-                  </div>
-                  {openFaq === i && (
-                    <p className="text-xs text-gray-500 leading-relaxed mt-2 font-light">
-                      {faq.a}
-                    </p>
-                  )}
+          {/* DYNAMIC CONTENT TERMINAL */}
+          <div className="bg-[#0A0A0A] border border-white/10 rounded-sm relative overflow-hidden group">
+            {/* Terminal Header Decor */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#C8A96A] via-transparent to-transparent opacity-50" />
+            
+            <div className="p-8 md:p-12">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+                <div>
+                  <span className="text-[#C8A96A] font-mono text-[10px] tracking-[0.5em] block mb-2 uppercase">
+                    Sector 0{activeIndex + 1} // Active_Path
+                  </span>
+                  <h3 className="text-3xl md:text-4xl font-serif text-white uppercase tracking-tight">
+                    {categories[activeIndex].title}
+                  </h3>
                 </div>
-              ))}
+                
+                <div className="flex items-center gap-4 text-[#555] text-[10px] font-mono uppercase tracking-widest">
+                  <span>Status: Operational</span>
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                </div>
+              </div>
+
+              {/* MODULE MICRO-GRID */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {categories[activeIndex].items.map((item, i) => (
+                  <div 
+                    key={i} 
+                    className="group/item relative p-5 bg-white/[0.02] border border-white/5 hover:border-[#C8A96A]/30 transition-all duration-300"
+                  >
+                    <div className="relative z-10 flex flex-col justify-between h-full min-h-[80px]">
+                      <span className="text-[#C8A96A]/40 text-[9px] font-mono mb-4 tracking-tighter">
+                        MOD_{activeIndex + 1}.0{i + 1}
+                      </span>
+                      <h4 className="text-white/90 group-hover/item:text-[#C8A96A] text-xs font-bold uppercase tracking-wider transition-colors">
+                        {item}
+                      </h4>
+                    </div>
+                    {/* Hover Visual */}
+                    <div className="absolute bottom-0 right-0 p-2 opacity-0 group-hover/item:opacity-100 transition-opacity">
+                      <ArrowRight className="w-3 h-3 text-[#C8A96A]" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* FOOTER CTA */}
+              <div className="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row justify-between items-center gap-6">
+                <p className="text-[#555] text-[10px] uppercase tracking-widest">
+                  Initialize full curriculum for {categories[activeIndex].title}
+                </p>
+                <button className="flex items-center gap-4 bg-[#C8A96A] px-6 py-3 text-black text-[10px] font-black uppercase tracking-[0.2em] hover:bg-white transition-all">
+                  Access Course Path
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+              </div>
             </div>
 
-            {/* Not Included Section */}
-            <div className="bg-white/[0.03] p-8 border-l border-white/10">
-              <h4 className="text-gray-500 text-[10px] font-bold uppercase tracking-[0.3em] mb-4">Tier Exclusions</h4>
-              <ul className="space-y-2 opacity-50">
-                {['Custom business services', 'Done-for-you systems'].map((item, i) => (
-                  <li key={i} className="flex items-center text-xs text-gray-400 line-through decoration-[#D4AF37]/40">
-                    <span className="mr-3 text-lg">—</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            {/* Corner Decor */}
+            <div className="absolute top-4 right-4 flex gap-1">
+              <div className="w-1 h-1 bg-[#C8A96A]/20" />
+              <div className="w-1 h-1 bg-[#C8A96A]/20" />
+              <div className="w-1 h-1 bg-[#C8A96A]/20" />
             </div>
           </div>
 
@@ -123,4 +155,4 @@ const Membership = () => {
   );
 };
 
-export default Membership;
+export default EducationHub;

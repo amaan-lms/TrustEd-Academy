@@ -1,77 +1,147 @@
 import React from 'react';
+import {
+  ArrowRight,
+  ShieldCheck,
+  GraduationCap,
+  ChevronRight,
+  Lock
+} from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden pt-24">
-      {/* Background Aesthetic Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        {/* Subtle Navy Gradient Pulse */}
-        <div className="absolute -top-[10%] -left-[10%] w-[40%] h-[40%] bg-[#001233] rounded-full blur-[120px] opacity-40"></div>
-        <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] bg-[#001233] rounded-full blur-[120px] opacity-30"></div>
+    <section className="relative min-h-screen bg-[#0A0A0A] overflow-hidden flex items-center pt-20">
+      
+      {/* --- BACKGROUND ARCHITECTURE --- */}
+      <div className="absolute inset-0 z-0">
+        {/* Deep Radial Vignette */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,#1B2A41_0%,transparent_60%)] opacity-40"></div>
         
-        {/* Fine Gold Grid Lines (Low Opacity) */}
-        <div className="absolute inset-0 opacity-[0.03]" 
-             style={{ backgroundImage: `linear-gradient(#D4AF37 1px, transparent 1px), linear-gradient(90deg, #D4AF37 1px, transparent 1px)`, backgroundSize: '60px 60px' }}>
-        </div>
+        {/* Animated Gold Beam */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-full bg-gradient-to-b from-transparent via-[#C8A96A]/20 to-transparent"></div>
+
+        {/* Subtle Grid - Adjusted for depth */}
+        <div 
+          className="absolute inset-0 opacity-[0.05]"
+          style={{
+            backgroundImage: `linear-gradient(#C8A96A 1px, transparent 1px), linear-gradient(90deg, #C8A96A 1px, transparent 1px)`,
+            backgroundSize: '100px 100px',
+            maskImage: 'radial-gradient(ellipse at center, black, transparent 80%)'
+          }}
+        ></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 text-center">
-        {/* Editorial Accent */}
-        <div className="flex items-center justify-center mb-6 space-x-4">
-          <div className="h-[1px] w-12 bg-[#D4AF37]"></div>
-          <span className="text-[#D4AF37] uppercase tracking-[0.4em] text-xs font-bold">
-            Redefining Digital Mastery
-          </span>
-          <div className="h-[1px] w-12 bg-[#D4AF37]"></div>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          
+          {/* --- LEFT CONTENT (Col 7) --- */}
+          <div className="lg:col-span-7 space-y-8">
+            
+            {/* Premium Badge */}
+            {/* <div className="inline-flex items-center gap-3 px-4 py-2 border border-[#C8A96A]/30 bg-[#C8A96A]/5 backdrop-blur-md rounded-full">
+              <div className="w-2 h-2 rounded-full bg-[#C8A96A] animate-pulse"></div>
+              <span className="text-[#C8A96A] uppercase tracking-[0.3em] text-[10px] font-bold">
+                Welcome To TrustEd Academy
+              </span>
+            </div> */}
+
+            {/* Main Title */}
+            <h1 className="text-white font-serif text-5xl md:text-7xl xl:text-8xl leading-[0.95] tracking-tight">
+              Structured <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#C8A96A] via-[#E2CF95] to-[#C8A96A]">
+                Education.
+              </span>
+            </h1>
+
+            <div className="space-y-6 max-w-xl">
+              <h2 className="text-white/90 text-2xl md:text-3xl font-light tracking-wide uppercase">
+                Private Systems. <span className="text-[#C8A96A]/50">Real Understanding.</span>
+              </h2>
+              
+              <p className="text-[#A0A0A0] text-lg leading-relaxed font-light border-l-2 border-[#C8A96A]/20 pl-6">
+                Trusted Academy provides structured education across multiple disciplines 
+                for individuals, families, business owners, and professionals who want 
+                <span className="text-white font-normal"> real knowledge and real control.</span>
+              </p>
+            </div>
+
+            {/* CTA Group */}
+            <div className="flex flex-wrap gap-4 pt-4">
+              <button className="group relative bg-[#C8A96A] text-black px-8 py-4 overflow-hidden font-bold uppercase tracking-widest text-xs transition-all hover:pr-12">
+                <span className="relative z-10 flex items-center gap-2">
+                  Enter The System <ArrowRight className="w-4 h-4" />
+                </span>
+                <div className="absolute inset-0 bg-white translate-y-[100%] group-hover:translate-y-0 transition-transform duration-300"></div>
+              </button>
+
+              <button className="group border border-white/10 hover:border-[#C8A96A]/50 text-white px-8 py-4 font-bold uppercase tracking-widest text-xs transition-all flex items-center gap-2 bg-white/5">
+                View Courses
+                <ChevronRight className="w-4 h-4 text-[#C8A96A] group-hover:translate-x-1 transition-transform" />
+              </button>
+            </div>
+          </div>
+
+          {/* --- RIGHT VISUAL (Col 5) --- */}
+          <div className="lg:col-span-5 relative">
+            <div className="relative aspect-[4/5] w-full flex items-center justify-center">
+              
+              {/* Floating Element 1: The Shield */}
+              {/* <div className="absolute top-10 right-10 z-20 bg-black/60 backdrop-blur-xl border border-[#C8A96A]/30 p-6 shadow-2xl animate-bounce [animation-duration:5s]">
+                <ShieldCheck className="w-8 h-8 text-[#C8A96A]" />
+              </div> */}
+
+              {/* Main Visual Card */}
+              <div className="relative w-full h-[500px] border border-white/10 bg-gradient-to-b from-white/5 to-transparent backdrop-blur-sm p-1">
+                <div className="h-full w-full border border-[#C8A96A]/20 flex flex-col justify-center items-center text-center p-8 overflow-hidden">
+                  
+                  {/* Geometric Deco */}
+                  <div className="absolute top-0 left-0 w-20 h-20 border-t border-l border-[#C8A96A]"></div>
+                  <div className="absolute bottom-0 right-0 w-20 h-20 border-b border-r border-[#C8A96A]"></div>
+
+                  <GraduationCap className="w-20 h-20 text-[#C8A96A] mb-8 opacity-80" />
+                  
+                  <h3 className="text-white text-5xl font-serif tracking-tighter mb-2">TrustEd</h3>
+                  <p className="text-[#C8A96A] tracking-[0.8em] text-xs uppercase mb-8">Academy</p>
+                  
+                  <div className="w-12 h-[1px] bg-[#C8A96A]/50 mb-8"></div>
+                  
+                  <p className="text-white/40 text-[10px] uppercase tracking-[0.4em] leading-loose">
+                    Knowledge • Freedom • Empowerment
+                  </p>
+                </div>
+              </div>
+
+              {/* Floating Element 2: Stats Overlay */}
+              <div className="absolute -bottom-6 -left-10 z-20 bg-[#1B2A41] border border-[#C8A96A]/20 p-8 shadow-2xl">
+                 <div className="flex items-center gap-4">
+                    <Lock className="w-5 h-5 text-[#C8A96A]" />
+                    <div>
+                      <p className="text-white font-serif text-xl">Private Access</p>
+                      <p className="text-[#A0A0A0] text-[10px] uppercase tracking-widest">Secure Learning</p>
+                    </div>
+                 </div>
+              </div>
+
+            </div>
+          </div>
         </div>
 
-        {/* Main Headline */}
-        <h1 className="text-5xl md:text-7xl lg:text-6xl font-serif text-white leading-[1.1] mb-8">
-          Knowledge You Can <span className="italic text-gray-400">Trust.</span><br />
-          <span className="bg-gradient-to-r from-white via-white to-[#D4AF37] bg-clip-text text-transparent">
-            Systems You Can Build On.
-          </span>
-        </h1>
-
-        {/* Subheadline */}
-        <p className="max-w-3xl mx-auto text-gray-400 text-lg md:text-lg leading-relaxed mb-12 font-light tracking-wide">
-          TrustEd Academy helps <span className="text-white font-normal">individuals, families, professionals, educators, and businesses</span> learn faster, build real skills, and create organized education systems using AI-powered courses and guided learning paths.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-          {/* Primary CTA */}
-          <button className="group relative px-10 py-5 bg-[#D4AF37] text-black font-bold uppercase tracking-widest text-sm transition-all duration-300 hover:bg-white hover:scale-105 active:scale-95 shadow-[0_20px_50px_rgba(212,175,55,0.2)]">
-            Start Here
-          </button>
-
-          {/* Secondary CTA */}
-          <button className="group px-10 py-5 border border-white/20 text-white font-bold uppercase tracking-widest text-sm transition-all duration-300 hover:border-[#D4AF37] hover:text-[#D4AF37] flex items-center">
-            Explore Business Solutions
-            <svg className="ml-2 w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </button>
-        </div>
-
-        {/* High-Trust Indicator */}
-        <div className=" pt-12 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50">
-          <div className="text-center">
-            <p className="text-white text-2xl font-serif">50k+</p>
-            <p className="text-gray-500 text-xs uppercase tracking-widest">Global Students</p>
-          </div>
-          <div className="text-center">
-            <p className="text-white text-2xl font-serif">120+</p>
-            <p className="text-gray-400 text-xs uppercase tracking-widest">AI Frameworks</p>
-          </div>
-          <div className="text-center">
-            <p className="text-white text-2xl font-serif">98%</p>
-            <p className="text-gray-400 text-xs uppercase tracking-widest">Success Rate</p>
-          </div>
-          <div className="text-center">
-            <p className="text-white text-2xl font-serif">ISO</p>
-            <p className="text-gray-400 text-xs uppercase tracking-widest">Certified Learning</p>
-          </div>
+        {/* --- BOTTOM METRICS --- */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mt-20 pt-10 border-t border-white/5">
+          {[
+            { val: "250+", label: "Structured Courses" },
+            { val: "40+", label: "Knowledge Systems" },
+            { val: "Global", label: "Community Access" },
+            { val: "Private", label: "Learning Access" }
+          ].map((stat, i) => (
+            <div key={i} className="group">
+              <h4 className="text-[#C8A96A] text-3xl font-serif mb-1 group-hover:translate-x-2 transition-transform duration-300">
+                {stat.val}
+              </h4>
+              <p className="text-white/40 uppercase tracking-[0.2em] text-[10px] font-bold">
+                {stat.label}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

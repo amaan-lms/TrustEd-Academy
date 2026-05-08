@@ -1,174 +1,153 @@
-import React, { useState } from 'react';
-import { Filter, Clock, Lock, CheckCircle2, Award, BookOpen } from 'lucide-react';
+import React from 'react';
+import { ArrowRight } from 'lucide-react';
 
-const CourseCatalog = () => {
-  const [activePath, setActivePath] = useState('All');
-  const [activeLevel, setActiveLevel] = useState('All');
-
-  const paths = ['All', 'Personal', 'Business', 'Professional', 'Creator'];
-  const levels = [
-    { label: 'All', value: 'All' },
-    { label: 'Free (L0)', value: 'Free' },
-    { label: 'Core (L1)', value: 'Core' },
-    { label: 'Advanced (L2)', value: 'Advanced' },
-    { label: 'Certification (L3)', value: 'Certification' }
-  ];
+const FeaturedCourses = () => {
 
   const courses = [
     {
-      title: "The Architecture of Personal Growth",
-      path: "Personal",
-      level: "Free",
-      levelNum: "0",
-      promise: "Build a foundational system for daily clarity and habit management.",
-      duration: "2 hours",
-      access: "Free Course",
-      cta: "Enroll Now"
+      title: 'Artificial Intelligence Systems',
+      desc: 'Learn structured AI workflows, automation systems, and practical implementation strategies.',
+      image:
+        'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop',
     },
     {
-      title: "Business Systems & Scaling",
-      path: "Business",
-      level: "Core",
-      levelNum: "1",
-      promise: "Structure your business operations for autonomous growth and efficiency.",
-      duration: "4 hours",
-      access: "Member Only",
-      cta: "Join Membership"
+      title: 'Business & Entrepreneurship',
+      desc: 'Build operational systems, scalable business structures, and strategic growth frameworks.',
+      image:
+        'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop',
     },
     {
-      title: "Executive Presence & AI",
-      path: "Professional",
-      level: "Advanced",
-      levelNum: "2",
-      promise: "Master professional leadership through the lens of AI-integrated workflows.",
-      duration: "6 hours",
-      access: "Advanced",
-      cta: "Enroll Now"
+      title: 'Financial Education',
+      desc: 'Develop practical financial literacy, organization, and wealth-building foundations.',
+      image:
+        'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop',
     },
     {
-      title: "Academy Builder Framework",
-      path: "Creator",
-      level: "Certification",
-      levelNum: "3",
-      promise: "The complete blueprint for designing and launching high-end education systems.",
-      duration: "12 hours",
-      access: "Certification Track",
-      cta: "Enroll Now"
-    }
+      title: 'Technology & Cybersecurity',
+      desc: 'Understand modern digital systems, cybersecurity fundamentals, and online infrastructure.',
+      image:
+        'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      title: 'Health & Wellness',
+      desc: 'Explore preventative health, nutrition systems, wellness strategies, and healthy living.',
+      image:
+        'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      title: 'Professional Development',
+      desc: 'Strengthen communication, leadership, consulting, and real-world professional skills.',
+      image:
+        'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      title: 'Homesteading & Sustainability',
+      desc: 'Learn self-sufficiency systems including food storage, hydroponics, and sustainable living.',
+      image:
+        'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop',
+    },
+    {
+      title: 'Personal Growth & Mindset',
+      desc: 'Build stronger habits, critical thinking, discipline, and long-term personal development.',
+      image:
+        'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop',
+    },
   ];
 
   return (
-    <section id="catalog" className="py-24 bg-black text-white pt-30">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        
-        {/* Header & Description */}
-        <div className="max-w-3xl mb-16">
-          <p className="text-[#D4AF37] uppercase tracking-[0.4em] text-xs font-bold mb-4">Curriculum</p>
-          <h2 className="text-4xl md:text-6xl font-serif mb-6">Explore Our Courses</h2>
-          <p className="text-gray-400 text-lg font-light leading-relaxed italic">
-            Browse our structured course library organized by learning path and experience level.
+    <section className="relative py-28 pt-10 bg-[#0A0A0A] overflow-hidden">
+
+      {/* Background Glow */}
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#C8A96A]/5 blur-[160px] rounded-full"></div>
+
+      {/* Grid Overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.025]"
+        style={{
+          backgroundImage: `
+            linear-gradient(#C8A96A 1px, transparent 1px),
+            linear-gradient(90deg, #C8A96A 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px',
+        }}
+      />
+
+      <div className="relative z-10 max-w-[1600px] mx-auto px-6 lg:px-10">
+
+        {/* Header */}
+        <div className="text-center mb-24">
+
+          <div className="flex items-center justify-center gap-4 mb-6">
+
+            <div className="w-12 h-[1px] bg-[#C8A96A]"></div>
+
+            <span className="text-[#C8A96A] uppercase tracking-[0.35em] text-xs font-semibold">
+              Featured Courses
+            </span>
+
+            <div className="w-12 h-[1px] bg-[#C8A96A]"></div>
+          </div>
+
+          <h2 className="text-white font-serif text-5xl md:text-5xl uppercase leading-tight">
+
+            Structured
+            <span className="block text-[#C8A96A]">
+              Learning Paths
+            </span>
+          </h2>
+
+          <p className="max-w-3xl mx-auto text-[#A0A0A0] text-lg leading-relaxed mt-8">
+            Explore professionally structured education systems designed
+            for practical implementation, skill development, and long-term growth.
           </p>
         </div>
 
-        {/* Filter Bar */}
-        <div className="flex flex-col lg:flex-row gap-8 justify-between border-y border-white/10 py-8 mb-16">
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest mb-2">
-              <Filter size={12} /> Filter by Path
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {paths.map(path => (
-                <button 
-                  key={path}
-                  onClick={() => setActivePath(path)}
-                  className={`px-4 py-2 text-[10px] uppercase tracking-widest transition-all duration-300 border ${activePath === path ? 'border-[#D4AF37] text-[#D4AF37] bg-[#D4AF37]/5' : 'border-white/10 text-gray-500 hover:text-white'}`}
-                >
-                  {path}
-                </button>
-              ))}
-            </div>
-          </div>
+        {/* Courses Grid */}
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
 
-          <div className="space-y-4">
-            <div className="flex items-center gap-2 text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest mb-2">
-              <BookOpen size={12} /> Experience Level
-            </div>
-            <div className="flex flex-wrap gap-3">
-              {levels.map(level => (
-                <button 
-                  key={level.value}
-                  onClick={() => setActiveLevel(level.value)}
-                  className={`px-4 py-2 text-[10px] uppercase tracking-widest transition-all duration-300 border ${activeLevel === level.value ? 'border-[#D4AF37] text-[#D4AF37] bg-[#D4AF37]/5' : 'border-white/10 text-gray-500 hover:text-white'}`}
-                >
-                  {level.label}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Course Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-10">
           {courses.map((course, index) => (
-            <div key={index} className="group bg-[#001233]/10 border border-white/5 hover:border-[#D4AF37]/30 transition-all duration-700 flex flex-col md:flex-row overflow-hidden relative">
-              
-              {/* Level Indicator Side Tab */}
-              <div className="bg-[#001233]/40 w-full md:w-16 flex md:flex-col items-center justify-center py-4 border-b md:border-b-0 md:border-r border-white/5">
-                <span className="text-gray-600 text-[10px] font-bold uppercase tracking-tighter vertical-rl">Level</span>
-                <span className="text-2xl font-serif text-[#D4AF37] mt-1">{course.levelNum}</span>
+            <div
+              key={index}
+              className="group relative bg-[#111827]/40 border border-white/10 hover:border-[#C8A96A]/40 transition-all duration-500 overflow-hidden"
+            >
+
+              {/* Image */}
+              <div className="relative overflow-hidden h-[260px]">
+
+                <img
+                  src={course.image}
+                  alt={course.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent"></div>
               </div>
 
-              <div className="p-8 flex-1 flex flex-col justify-between">
-                <div>
-                  <div className="flex justify-between items-start mb-6">
-                    <span className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest px-2 py-1 bg-[#D4AF37]/5 border border-[#D4AF37]/20">
-                      {course.access}
-                    </span>
-                    <div className="flex items-center text-gray-500 text-[10px] tracking-widest uppercase">
-                      <Clock size={12} className="mr-2" /> {course.duration}
-                    </div>
-                  </div>
+              {/* Content */}
+              <div className="p-8">
 
-                  <h3 className="text-2xl font-serif mb-3 group-hover:text-[#D4AF37] transition-colors">{course.title}</h3>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-4 font-semibold">{course.path} Path</p>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-8 font-light italic">
-                    "{course.promise}"
-                  </p>
-                </div>
+                <h3 className="text-white uppercase tracking-[0.12em] text-sm font-bold leading-relaxed mb-5 group-hover:text-[#C8A96A] transition-colors duration-300">
+                  {course.title}
+                </h3>
 
-                <div className="flex items-center justify-between pt-6 border-t border-white/5">
-                   {course.access === "Member Only" ? (
-                     <div className="flex items-center gap-2 text-gray-600 text-[10px] uppercase font-bold tracking-widest">
-                       <Lock size={12} /> Restricted
-                     </div>
-                   ) : (
-                     <div className="flex items-center gap-2 text-[#D4AF37] text-[10px] uppercase font-bold tracking-widest">
-                       <CheckCircle2 size={12} /> Open Enrollment
-                     </div>
-                   )}
-                   
-                   <button className={`text-[10px] font-bold uppercase tracking-[0.2em] transition-all duration-300 ${course.cta === "Join Membership" ? 'text-white border-b border-white hover:text-[#D4AF37] hover:border-[#D4AF37]' : 'text-[#D4AF37] border-b border-[#D4AF37] hover:text-white hover:border-white'}`}>
-                     {course.cta}
-                   </button>
-                </div>
+                <p className="text-[#A0A0A0] text-sm leading-relaxed mb-10 min-h-[90px]">
+                  {course.desc}
+                </p>
+
+                {/* CTA */}
+                <button className="group/button flex items-center gap-3 text-[#C8A96A] uppercase tracking-[0.18em] text-[11px] font-bold">
+
+                  Access Course
+
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/button:translate-x-1" />
+                </button>
+
+                {/* Bottom Line */}
+                <div className="w-10 h-[1px] bg-[#C8A96A] mt-8 group-hover:w-full transition-all duration-700"></div>
               </div>
-
-              {/* Decorative Accent */}
-              {course.level === "Certification" && (
-                <div className="absolute top-2 right-2 text-[#D4AF37]/20">
-                  <Award size={48} />
-                </div>
-              )}
             </div>
           ))}
-        </div>
-
-        {/* Global Catalog Footer */}
-        <div className="mt-20 text-center">
-          <p className="text-gray-600 text-[10px] uppercase tracking-[0.5em] mb-8">
-            Advanced systems for professional mastery
-          </p>
-          <div className="h-[1px] w-24 bg-[#D4AF37] mx-auto opacity-30"></div>
         </div>
 
       </div>
@@ -176,4 +155,4 @@ const CourseCatalog = () => {
   );
 };
 
-export default CourseCatalog;
+export default FeaturedCourses;

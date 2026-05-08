@@ -1,68 +1,95 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Play, Phone, Mail, Globe, ExternalLink, ShieldCheck } from 'lucide-react';
+import {
+  Mail,
+  Play,
+  Globe,
+  ShieldCheck,
+  Camera,
+  Share2,
+} from 'lucide-react';
+
 import TAlogo from '../assets/TrustEdAcademy.png';
 
-// Note: For TikTok, since it's not always in standard sets, 
-// we use a custom SVG to match the premium gold aesthetic.
-const TikTokIcon = () => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className="w-4 h-4"
-  >
-    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
-  </svg>
-);
-
 const Footer = () => {
-  const primaryLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Start Here', href: '/start' },
-    { name: 'Free Training', href: '/training' },
-    { name: 'Membership', href: '/membership' },
-    { name: 'Pricing', href: '/pricing' },
-    { name: 'Contact', href: '/contact' },
+  const quickLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Courses', path: '/courses' },
+    { name: 'Categories', path: '/categories' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact', path: '/contact' },
   ];
 
-  const secondaryLinks = [
-    { name: 'About', href: '/about' },
-    { name: 'AI Instructor', href: '/ai-instructor' },
-    { name: 'Interactive E-Books', href: '/ebooks' },
-    { name: 'Privacy Policy', href: '/privacy' },
-    { name: 'Terms of Use', href: '/terms' },
-    { name: 'Disclaimer', href: '/disclaimer' },
+  const supportLinks = [
+    { name: 'FAQ', path: '/faq' },
+    { name: 'Terms', path: '/terms' },
+    { name: 'Privacy', path: '/privacy' },
   ];
 
   return (
-    <footer className="bg-[#001233] text-white pt-20 pb-10 border-t border-[#D4AF37]/20">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-          
-          {/* Column 1: Brand & Disclaimer */}
-          <div className="lg:col-span-1">
-            <img 
-              src={TAlogo} 
-              alt="TrustEd Academy Logo" 
-              className="h-33 w-auto mb-6 brightness-110 transition-all duration-500"
-            />
-            <p className="text-gray-400 text-[11px] leading-relaxed italic opacity-70">
-              This platform provides educational content only and does not offer legal, financial, or professional advice.
+    <footer className="relative bg-[#0A0A0A] border-t border-[#C8A96A]/20 overflow-hidden">
+
+      {/* Background Glow */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C8A96A]/5 blur-[140px] rounded-full"></div>
+
+      {/* Grid Overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.03]"
+        style={{
+          backgroundImage: `
+            linear-gradient(#C8A96A 1px, transparent 1px),
+            linear-gradient(90deg, #C8A96A 1px, transparent 1px)
+          `,
+          backgroundSize: '60px 60px',
+        }}
+      ></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-20">
+
+        {/* MAIN GRID */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-14 mb-16">
+
+          {/* LOGO + COPYRIGHT */}
+          <div>
+
+            <div className="relative inline-block mb-6 group">
+
+              <div className="absolute inset-0 bg-[#C8A96A]/10 blur-3xl rounded-full group-hover:bg-[#C8A96A]/20 transition-all duration-700"></div>
+
+              <img
+                src={TAlogo}
+                alt="TrustEd Academy"
+                className="relative z-10 h-32 w-auto object-contain group-hover:scale-105 transition-all duration-500"
+              />
+            </div>
+
+            <p className="text-[#A0A0A0] text-sm leading-relaxed mb-6">
+              Structured education systems designed for long-term learning,
+              implementation, and growth.
             </p>
+
+            <div className="flex items-center gap-3 text-[#C8A96A]">
+              <ShieldCheck className="w-4 h-4" />
+
+              <span className="uppercase tracking-[0.2em] text-[10px] font-semibold">
+                Trusted Learning Platform
+              </span>
+            </div>
           </div>
 
-          {/* Column 2: Navigation */}
+          {/* LINKS */}
           <div>
-            <h4 className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.3em] mb-6">Navigation</h4>
+            <h4 className="text-white uppercase tracking-[0.3em] text-xs font-semibold mb-8">
+              Links
+            </h4>
+
             <ul className="space-y-4">
-              {primaryLinks.map((link) => (
-                <li key={link.name}>
-                  <Link to={link.href} className="text-gray-400 hover:text-[#D4AF37] text-xs tracking-wide transition-colors flex items-center group">
-                    <span className="w-0 group-hover:w-2 h-[1px] bg-[#D4AF37] mr-0 group-hover:mr-2 transition-all"></span>
+              {quickLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    to={link.path}
+                    className="text-[#A0A0A0] hover:text-[#C8A96A] transition-colors duration-300 text-sm"
+                  >
                     {link.name}
                   </Link>
                 </li>
@@ -70,74 +97,87 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Column 3: Resources */}
+          {/* SUPPORT */}
           <div>
-            <h4 className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.3em] mb-6">Resources</h4>
+            <h4 className="text-white uppercase tracking-[0.3em] text-xs font-semibold mb-8">
+              Support
+            </h4>
+
             <ul className="space-y-4">
-              {secondaryLinks.map((link) => (
-                <li key={link.name}>
-                  <a href={link.href} className="text-gray-400 hover:text-white text-xs tracking-wide transition-colors">
+              {supportLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    to={link.path}
+                    className="text-[#A0A0A0] hover:text-[#C8A96A] transition-colors duration-300 text-sm"
+                  >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Column 4: Contact Information */}
+          {/* CONNECT */}
           <div>
-            <h4 className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[0.3em] mb-6">Connect</h4>
-            <ul className="space-y-4">
-              <li>
-                <a href="tel:618-313-1860" className="text-gray-400 hover:text-white text-xs flex items-center gap-3 transition-colors">
-                  <Phone size={14} className="text-[#D4AF37]" /> 618-313-1860
-                </a>
-              </li>
-              <li>
-                <a href="mailto:caleb@trustedacademy.net" className="text-gray-400 hover:text-white text-xs flex items-center gap-3 transition-colors">
-                  <Mail size={14} className="text-[#D4AF37]" /> caleb@trustedacademy.net
-                </a>
-              </li>
-              <li>
-                <a href="https://www.youtube.com/@TrustEdAcademy-v4n" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-xs flex items-center gap-3 transition-colors">
-                  <Play size={14} className="text-[#D4AF37]" /> YouTube
-                </a>
-              </li>
-              <li>
-                <a href="https://www.tiktok.com/@trustedacademy1985" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-xs flex items-center gap-3 transition-colors">
-                  <TikTokIcon /> TikTok
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 5: High-Trust Visual */}
-          <div className="bg-black/40 p-6 border border-[#D4AF37]/10 backdrop-blur-sm">
-            <h4 className="text-white text-[10px] font-bold uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
-              <ShieldCheck size={12} className="text-[#D4AF37]" /> Academy Status
+            <h4 className="text-white uppercase tracking-[0.3em] text-xs font-semibold mb-8">
+              Connect
             </h4>
-            <div className="flex items-center mb-4">
-              <div className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse mr-2 shadow-[0_0_8px_#22c55e]"></div>
-              <span className="text-[10px] text-gray-300 uppercase tracking-widest font-medium">Systems Online</span>
+
+            <div className="space-y-5">
+
+              <a
+                href="mailto:info@trustedacademy.com"
+                className="flex items-center gap-3 text-[#A0A0A0] hover:text-[#C8A96A] transition-colors duration-300 text-sm"
+              >
+                <Mail className="w-4 h-4" />
+                info@trustedacademy.com
+              </a>
+
+              <div className="flex items-center gap-4 pt-2">
+
+                <a
+                  href="#"
+                  className="w-10 h-10 border border-white/10 hover:border-[#C8A96A] flex items-center justify-center text-[#A0A0A0] hover:text-[#C8A96A] transition-all duration-300 hover:scale-110"
+                >
+                  <Camera className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="#"
+                  className="w-10 h-10 border border-white/10 hover:border-[#C8A96A] flex items-center justify-center text-[#A0A0A0] hover:text-[#C8A96A] transition-all duration-300 hover:scale-110"
+                >
+                  <Share2 className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="#"
+                  className="w-10 h-10 border border-white/10 hover:border-[#C8A96A] flex items-center justify-center text-[#A0A0A0] hover:text-[#C8A96A] transition-all duration-300 hover:scale-110"
+                >
+                  <Play className="w-4 h-4" />
+                </a>
+
+                <a
+                  href="#"
+                  className="w-10 h-10 border border-white/10 hover:border-[#C8A96A] flex items-center justify-center text-[#A0A0A0] hover:text-[#C8A96A] transition-all duration-300 hover:scale-110"
+                >
+                  <Globe className="w-4 h-4" />
+                </a>
+
+              </div>
             </div>
-            <p className="text-[10px] text-gray-500 leading-relaxed font-mono">
-              Global Education Framework <br />
-              v4.2.0 // ©2026_TRST
-            </p>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
-          <p className="text-[10px] text-gray-500 uppercase tracking-[0.4em] font-light">
-            &copy; 2026 TrustEd Academy. <span className="hidden sm:inline">Crafted for Excellence.</span>
+        {/* BOTTOM */}
+        <div className="pt-8 border-t border-white/10 flex flex-col lg:flex-row justify-between items-center gap-6">
+
+          <p className="text-[#707070] text-xs uppercase tracking-[0.25em] text-center lg:text-left">
+            © 2026 TrustEd Academy. All Rights Reserved.
           </p>
-          
-          {/* <div className="flex space-x-8">
-            <a href="#" className="text-gray-500 hover:text-[#D4AF37] transition-all transform hover:-translate-y-1"><TikTokIcon /></a>
-            <a href="#" className="text-gray-500 hover:text-[#D4AF37] transition-all transform hover:-translate-y-1"><Play size={18} /></a>
-            <a href="#" className="text-gray-500 hover:text-[#D4AF37] transition-all transform hover:-translate-y-1"><Globe size={18} /></a>
-          </div> */}
+
+          <p className="text-[#707070] text-xs text-center lg:text-right max-w-2xl leading-relaxed">
+            Educational purposes only. No legal, financial, or tax advice is provided.
+          </p>
         </div>
       </div>
     </footer>
