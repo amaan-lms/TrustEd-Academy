@@ -6,7 +6,7 @@ import About from "./Components/About";
 import Services from "./Components/Services";
 import Membership from "./Pages/Membership";
 import Pricing from "./Components/Pricing";
-import Education from "./Components/Education"; 
+import Education from "./Components/Education";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 
@@ -43,7 +43,7 @@ function HomePage() {
       <About />
       <Services />
       <Membership />
-      <Pricing />
+      {/* <Pricing /> */}
       <Education />
       <Contact />
     </>
@@ -57,14 +57,14 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/start" element={<StartHere />} />
+        {/* <Route path="/start" element={<StartHere />} />
         <Route path="/training" element={<FreeTraining />} />
         <Route path="/membership" element={<Membership />} />
         <Route path="/courses" element={<CourseCatalog />} />
         <Route path="/business" element={<BusinessSolutions />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<MemberLogin />} />
+        <Route path="/login" element={<MemberLogin />} /> */}
       </Routes>
       <Footer />
     </Router>

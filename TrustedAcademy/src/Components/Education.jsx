@@ -1,155 +1,126 @@
-import React from 'react';
-import { ArrowRight } from 'lucide-react';
+import React from "react";
+import { ArrowRight } from "lucide-react";
 
 const FeaturedCourses = () => {
-
   const courses = [
     {
-      title: 'Artificial Intelligence Systems',
-      desc: 'Learn structured AI workflows, automation systems, and practical implementation strategies.',
+      title: "Leadership",
+      desc: "Build confident modern leaders.",
       image:
-        'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200&auto=format&fit=crop',
+        "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
     },
     {
-      title: 'Business & Entrepreneurship',
-      desc: 'Build operational systems, scalable business structures, and strategic growth frameworks.',
+      title: "Onboarding",
+      desc: "Smooth employee onboarding systems.",
       image:
-        'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop',
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
     },
     {
-      title: 'Financial Education',
-      desc: 'Develop practical financial literacy, organization, and wealth-building foundations.',
+      title: "Learning Design",
+      desc: "Scalable instructional frameworks.",
       image:
-        'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1200&auto=format&fit=crop',
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
     },
     {
-      title: 'Technology & Cybersecurity',
-      desc: 'Understand modern digital systems, cybersecurity fundamentals, and online infrastructure.',
+      title: "Digital Learning",
+      desc: "Modern virtual learning experiences.",
       image:
-        'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      title: 'Health & Wellness',
-      desc: 'Explore preventative health, nutrition systems, wellness strategies, and healthy living.',
-      image:
-        'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      title: 'Professional Development',
-      desc: 'Strengthen communication, leadership, consulting, and real-world professional skills.',
-      image:
-        'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      title: 'Homesteading & Sustainability',
-      desc: 'Learn self-sufficiency systems including food storage, hydroponics, and sustainable living.',
-      image:
-        'https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=1200&auto=format&fit=crop',
-    },
-    {
-      title: 'Personal Growth & Mindset',
-      desc: 'Build stronger habits, critical thinking, discipline, and long-term personal development.',
-      image:
-        'https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop',
+        "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?q=80&w=1200&auto=format&fit=crop",
     },
   ];
 
   return (
-    <section className="relative py-28 pt-10 bg-[#0A0A0A] overflow-hidden">
+    <section id='Programs' className="relative py-14 bg-white overflow-hidden">
 
-      {/* Background Glow */}
-      <div className="absolute top-0 right-0 w-[700px] h-[700px] bg-[#C8A96A]/5 blur-[160px] rounded-full"></div>
+      {/* Background */}
+      <div className="absolute inset-0 z-0">
 
-      {/* Grid Overlay */}
-      <div
-        className="absolute inset-0 opacity-[0.025]"
-        style={{
-          backgroundImage: `
-            linear-gradient(#C8A96A 1px, transparent 1px),
-            linear-gradient(90deg, #C8A96A 1px, transparent 1px)
-          `,
-          backgroundSize: '60px 60px',
-        }}
-      />
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, #0F172A 1px, transparent 1px),
+              linear-gradient(to bottom, #0F172A 1px, transparent 1px)
+            `,
+            backgroundSize: "90px 90px",
+          }}
+        />
 
-      <div className="relative z-10 max-w-[1600px] mx-auto px-6 lg:px-10">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-50 rounded-full blur-3xl opacity-50"></div>
+      </div>
+
+      <div className="relative z-10 max-w-[1300px] mx-auto px-6 lg:px-10">
 
         {/* Header */}
-        <div className="text-center mb-24">
+        <div className="text-center max-w-3xl mx-auto mb-16">
 
-          <div className="flex items-center justify-center gap-4 mb-6">
+          <span className="text-[#2563EB] uppercase tracking-[0.22em] text-[10px] font-semibold">
+            Learning Programs
+          </span>
 
-            <div className="w-12 h-[1px] bg-[#C8A96A]"></div>
-
-            <span className="text-[#C8A96A] uppercase tracking-[0.35em] text-xs font-semibold">
-              Featured Courses
-            </span>
-
-            <div className="w-12 h-[1px] bg-[#C8A96A]"></div>
-          </div>
-
-          <h2 className="text-white font-serif text-5xl md:text-5xl uppercase leading-tight">
-
-            Structured
-            <span className="block text-[#C8A96A]">
-              Learning Paths
+          <h2 className="mt-5 text-[#0F172A] text-4xl md:text-5xl font-semibold tracking-[-0.05em] leading-[1.05]">
+            Modern Courses
+            <span className="block text-[#94A3B8] font-light">
+              For Growing Teams.
             </span>
           </h2>
 
-          <p className="max-w-3xl mx-auto text-[#A0A0A0] text-lg leading-relaxed mt-8">
-            Explore professionally structured education systems designed
-            for practical implementation, skill development, and long-term growth.
+          <p className="mt-6 text-[#667085] text-base leading-relaxed">
+            Scalable learning systems designed for workforce growth.
           </p>
         </div>
 
-        {/* Courses Grid */}
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-6">
+        {/* Redesigned Layout */}
+        <div className="grid md:grid-cols-2 gap-6">
 
           {courses.map((course, index) => (
             <div
               key={index}
-              className="group relative bg-[#111827]/40 border border-white/10 hover:border-[#C8A96A]/40 transition-all duration-500 overflow-hidden"
+              className="group bg-white border border-[#E4E7EC] rounded-[28px] overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
             >
 
-              {/* Image */}
-              <div className="relative overflow-hidden h-[260px]">
+              <div className="grid md:grid-cols-2 h-full">
 
-                <img
-                  src={course.image}
-                  alt={course.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+                {/* Image */}
+                <div className="relative h-[240px] md:h-full overflow-hidden">
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent"></div>
-              </div>
+                  <img
+                    src={course.image}
+                    alt={course.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
 
-              {/* Content */}
-              <div className="p-8">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                </div>
 
-                <h3 className="text-white uppercase tracking-[0.12em] text-sm font-bold leading-relaxed mb-5 group-hover:text-[#C8A96A] transition-colors duration-300">
-                  {course.title}
-                </h3>
+                {/* Content */}
+                <div className="p-8 flex flex-col justify-center">
 
-                <p className="text-[#A0A0A0] text-sm leading-relaxed mb-10 min-h-[90px]">
-                  {course.desc}
-                </p>
+                  <span className="text-[#2563EB] uppercase tracking-[0.18em] text-[10px] font-semibold mb-4">
+                    Featured Program
+                  </span>
 
-                {/* CTA */}
-                <button className="group/button flex items-center gap-3 text-[#C8A96A] uppercase tracking-[0.18em] text-[11px] font-bold">
+                  <h3 className="text-[#101828] text-2xl font-semibold tracking-[-0.03em] mb-4">
+                    {course.title}
+                  </h3>
 
-                  Access Course
+                  <p className="text-[#667085] text-sm leading-relaxed mb-8">
+                    {course.desc}
+                  </p>
 
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover/button:translate-x-1" />
-                </button>
+                  {/* CTA */}
+                  <button className="inline-flex items-center gap-2 text-[#0F172A] hover:text-[#2563EB] transition-all duration-300">
+                    <span className="uppercase tracking-[0.16em] text-[10px] font-semibold">
+                      Explore
+                    </span>
 
-                {/* Bottom Line */}
-                <div className="w-10 h-[1px] bg-[#C8A96A] mt-8 group-hover:w-full transition-all duration-700"></div>
+                    <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </button>
+                </div>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

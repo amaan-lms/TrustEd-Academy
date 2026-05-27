@@ -1,135 +1,152 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import {
-  ShieldCheck,
   Menu,
   X,
-} from 'lucide-react';
+  ArrowRight,
+} from "lucide-react";
 
-import TAlogo from '../assets/TAlogo2.png';
+import TAlogo from "../assets/TAlogo2.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Courses', href: '/courses' },
-    { name: 'Categories', href: '/categories' },
-    { name: 'About', href: '/about' },
-    { name: 'Resources', href: '/resources' },
-    { name: 'Contact', href: '/contact' },
+    { name: "Home", href: "#hero" },
+    // { name: "Services", href: "#services" },
+    { name: "About", href: "#about" },
+    { name: "Solutions", href: "#solutions" },
+
+    { name: "Programs", href: "#Programs" },
+    { name: "Membership", href: "#member" },
+
+    // { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#0A0A0A]/95 backdrop-blur-md border-b border-[#C8A96A]/20">
-      <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
-        <div className="flex items-center justify-between h-[88px]">
+    <>
+      <nav
+        className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled
+          ? "bg-white/90 backdrop-blur-xl border-b border-[#E4E7EC]"
+          : "bg-transparent"
+          }`}
+      >
+        <div className="max-w-[1440px] mx-auto px-6 lg:px-10">
+          <div className="h-[92px] flex items-center justify-between">
 
-          {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center gap-3 group"
-          >
-            <img
-              src={TAlogo}
-              alt="TrustEd Academy"
-              className="h-14 lg:h-16 w-auto object-contain"
-            />
-
-            <div className="hidden sm:block leading-tight">
-              <h2 className="text-white text-xl font-semibold tracking-wide uppercase">
-                TrustEd
-              </h2>
-
-              <p className="text-[#C8A96A] text-[11px] tracking-[0.35em] uppercase">
-                Academy
-              </p>
-            </div>
-          </Link>
-
-          {/* Desktop Nav */}
-          <div className="hidden xl:flex items-center gap-10">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.href}
-                className="relative text-white/75 hover:text-[#C8A96A] text-[13px] font-medium uppercase tracking-[0.18em] transition-all duration-300 group"
-              >
-                {link.name}
-
-                <span className="absolute left-0 -bottom-2 h-[1px] w-0 bg-[#C8A96A] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="hidden md:flex items-center">
+            {/* Logo */}
             <Link
-              to="/login"
-              className="group flex items-center gap-2 border border-[#C8A96A] px-6 py-3 text-[#C8A96A] hover:bg-[#C8A96A] hover:text-black transition-all duration-300 uppercase text-[11px] tracking-[0.2em] font-semibold"
+              to="/"
+              className="flex items-center gap-4 group relative z-50"
             >
-              <ShieldCheck className="w-4 h-4" />
-              Member Login
-            </Link>
-          </div>
+              <div className="w-12 h-12 rounded-2xl bg-[#F5F7FA] border border-[#E4E7EC] flex items-center justify-center overflow-hidden">
+                <img
+                  src={TAlogo}
+                  alt="TrustEd Academy"
+                  className="w-9 h-9 object-contain transition-transform duration-500 group-hover:scale-110"
+                />
+              </div>
 
-          {/* Mobile Toggle */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="xl:hidden text-[#C8A96A]"
-          >
-            {isOpen ? (
-              <X className="w-8 h-8" />
-            ) : (
-              <Menu className="w-8 h-8" />
-            )}
-          </button>
+              <div className="leading-tight">
+                <h2 className="text-[#111827] text-[20px] font-semibold tracking-[-0.03em]">
+                  TrustEd
+                </h2>
+
+                <p className="text-[#667085] text-[12px] tracking-[0.18em] uppercase font-medium">
+                  Learning Architecture
+                </p>
+              </div>
+            </Link>
+
+            {/* Desktop Nav */}
+            <div className="hidden xl:flex items-center gap-12">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="relative text-[#344054] hover:text-[#0F172A] text-[14px] font-medium tracking-[-0.01em] transition-all duration-300 group"
+                >
+                  {link.name}
+
+                  <span className="absolute left-0 -bottom-2 h-[2px] w-0 bg-[#2563EB] transition-all duration-300 group-hover:w-full rounded-full"></span>
+                </Link>
+              ))}
+            </div>
+
+            {/* CTA */}
+            <div className="hidden md:flex items-center gap-4">
+              <Link
+                to="#contact"
+                className="group inline-flex items-center gap-2 bg-[#0F172A] hover:bg-[#111827] text-white px-6 py-3 rounded-full transition-all duration-300 text-[14px] font-medium shadow-lg shadow-slate-200"
+              >
+                Schedule Consultation
+
+                <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="xl:hidden relative z-50 text-[#0F172A]"
+            >
+              {isOpen ? (
+                <X className="w-7 h-7" />
+              ) : (
+                <Menu className="w-7 h-7" />
+              )}
+            </button>
+          </div>
         </div>
-      </div>
+      </nav>
 
       {/* Mobile Menu */}
       <div
-        className={`xl:hidden fixed top-0 right-0 h-screen w-full bg-[#0A0A0A] transition-all duration-500 ${
-          isOpen
-            ? 'translate-x-0 opacity-100'
-            : 'translate-x-full opacity-0'
-        }`}
+        className={`fixed inset-0 bg-white z-40 transition-all duration-500 xl:hidden ${isOpen
+          ? "opacity-100 visible"
+          : "opacity-0 invisible"
+          }`}
       >
-        <div className="flex flex-col justify-center items-center h-full px-8 relative">
+        <div className="flex flex-col justify-center h-full px-8">
 
-          {/* Close Button */}
-          <button
-            onClick={() => setIsOpen(false)}
-            className="absolute top-8 right-6 text-[#C8A96A]"
-          >
-            <X className="w-8 h-8" />
-          </button>
-
-          {/* Mobile Links */}
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.href}
                 onClick={() => setIsOpen(false)}
-                className="text-white hover:text-[#C8A96A] uppercase tracking-[0.2em] text-lg transition-all duration-300"
+                className="text-[#101828] text-[34px] font-semibold tracking-[-0.04em] hover:translate-x-2 transition-all duration-300"
               >
                 {link.name}
               </Link>
             ))}
           </div>
 
-          {/* Mobile CTA */}
-          <Link
-            to="/login"
-            onClick={() => setIsOpen(false)}
-            className="mt-12 border border-[#C8A96A] px-8 py-4 text-[#C8A96A] hover:bg-[#C8A96A] hover:text-black transition-all duration-300 uppercase tracking-[0.2em] text-sm font-semibold"
-          >
-            Member Login
-          </Link>
+          <div className="mt-14">
+            <Link
+              to="#contact"
+              onClick={() => setIsOpen(false)}
+              className="inline-flex items-center gap-2 bg-[#0F172A] text-white px-7 py-4 rounded-full text-sm font-medium"
+            >
+              Schedule Consultation
+
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </div>
-    </nav>
+    </>
   );
 };
 
