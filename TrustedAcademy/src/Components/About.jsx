@@ -11,37 +11,38 @@ const ValuePropositionRow = () => {
   const valueProps = [
     {
       title: "Instructional Design",
-      desc: "Strategic learning systems built for scalable workforce education and engagement.",
+      desc: "Learning experiences designed to improve engagement and workforce performance.",
       icon: BookOpen,
     },
     {
       title: "Learning Architecture",
-      desc: "Structured curriculum frameworks aligned with organizational outcomes.",
+      desc: "Structured training frameworks aligned with business and compliance goals.",
       icon: Layers3,
     },
     {
       title: "Corporate Training",
-      desc: "Modern employee learning experiences designed for performance and retention.",
+      desc: "Modern onboarding and workforce education systems for organizations.",
       icon: BriefcaseBusiness,
     },
     {
-      title: "Measurable Results",
-      desc: "Programs developed around real metrics, adoption, and learner success.",
+      title: "Performance Learning",
+      desc: "Training systems focused on retention, adoption, and measurable outcomes.",
       icon: LineChart,
     },
     {
-      title: "Enterprise Ready",
-      desc: "Professional systems designed for secure, scalable, and modern delivery.",
+      title: "Scalable Delivery",
+      desc: "Enterprise-ready learning solutions for teams, HR, and operations.",
       icon: ShieldCheck,
     },
   ];
 
   return (
-    <section id='about' className="relative py-20 bg-white overflow-hidden">
-
+    <section
+      id="about"
+      className="relative py-20 bg-white overflow-hidden"
+    >
       {/* Background */}
       <div className="absolute inset-0 z-0">
-
         {/* Grid */}
         <div
           className="absolute inset-0 opacity-[0.03]"
@@ -61,10 +62,8 @@ const ValuePropositionRow = () => {
       </div>
 
       <div className="relative z-10 max-w-[1440px] mx-auto px-6 lg:px-10">
-
         {/* Header */}
-        <div className="max-w-3xl mb-20">
-
+        <div className="max-w-4xl mb-20">
           <div className="flex items-center gap-4 mb-7">
             <div className="w-12 h-[1px] bg-[#2563EB]"></div>
 
@@ -76,14 +75,19 @@ const ValuePropositionRow = () => {
           <h2 className="text-[#0F172A] text-4xl md:text-6xl font-semibold tracking-[-0.05em] leading-[1.02]">
             Built For Modern
             <span className="block text-[#94A3B8] font-light">
-              Learning Infrastructure.
+              Workforce Learning.
             </span>
           </h2>
+
+          <p className="mt-8 max-w-3xl text-[#667085] text-lg leading-relaxed font-light">
+            TrustEd helps organizations improve onboarding, compliance, and
+            workforce development through structured learning systems and
+            modern instructional design.
+          </p>
         </div>
 
         {/* Cards */}
         <div className="grid md:grid-cols-2 xl:grid-cols-5 border border-[#E4E7EC] rounded-[32px] overflow-hidden bg-[#FCFCFD] shadow-[0_20px_60px_rgba(15,23,42,0.04)]">
-
           {valueProps.map((item, index) => {
             const Icon = item.icon;
 
@@ -92,7 +96,6 @@ const ValuePropositionRow = () => {
                 key={index}
                 className="group relative p-8 lg:p-10 border-b md:border-b border-[#EAECF0] xl:border-b-0 xl:border-r last:border-r-0 hover:bg-white transition-all duration-500"
               >
-
                 {/* Hover Accent */}
                 <div className="absolute top-0 left-0 w-full h-[3px] bg-[#2563EB] scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500"></div>
 
@@ -102,7 +105,7 @@ const ValuePropositionRow = () => {
                 </div>
 
                 {/* Title */}
-                <h3 className="text-[#101828] text-xl font-semibold tracking-[-0.03em] mb-4">
+                <h3 className="text-[#101828] text-xl font-semibold tracking-[-0.03em] mb-4 leading-snug">
                   {item.title}
                 </h3>
 
@@ -116,7 +119,7 @@ const ValuePropositionRow = () => {
                   <div className="w-8 h-[1px] bg-current"></div>
 
                   <span className="uppercase tracking-[0.18em] text-[10px] font-semibold">
-                    TrustEd System
+                    TrustEd Systems
                   </span>
                 </div>
               </div>

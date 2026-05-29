@@ -9,27 +9,30 @@ import {
 const EducationCategories = () => {
   const categories = [
     {
-      title: "Learning Design",
-      desc: "Modern systems built for engagement.",
+      title: "Instructional Design Solutions",
+      desc: "Strategic learning systems designed to improve employee understanding, engagement, and long-term workforce development.",
       icon: LayoutGrid,
       num: "01",
     },
     {
-      title: "Training Strategy",
-      desc: "Scalable frameworks for teams.",
+      title: "Corporate Training Strategy",
+      desc: "Structured onboarding, compliance education, and workforce learning frameworks aligned with business objectives.",
       icon: GraduationCap,
       num: "02",
     },
     {
-      title: "Enterprise Delivery",
-      desc: "Secure solutions for organizations.",
+      title: "Enterprise Learning Delivery",
+      desc: "Scalable learning infrastructure and LMS-based solutions built for modern organizations and operational teams.",
       icon: ShieldCheck,
       num: "03",
     },
   ];
 
   return (
-    <section id='solutions' className="relative py-14 bg-[#F8FAFC]  overflow-hidden">
+    <section
+      id="solutions"
+      className="relative py-20 bg-[#F8FAFC] overflow-hidden"
+    >
 
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -50,25 +53,28 @@ const EducationCategories = () => {
       <div className="relative z-10 max-w-[1280px] mx-auto px-6 lg:px-10">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-16">
 
           <span className="text-[#2563EB] uppercase tracking-[0.2em] text-[10px] font-semibold">
-            Enterprise Learning
+            Corporate Learning Solutions
           </span>
 
           <h2 className="mt-5 text-[#0F172A] text-4xl md:text-5xl font-semibold tracking-[-0.05em] leading-[1.05]">
-            Modern Learning
+            Training Systems Built
             <span className="block text-[#94A3B8] font-light">
-              Built For Teams.
+              For Modern Organizations.
             </span>
           </h2>
 
-          <p className="mt-6 text-[#667085] text-base leading-relaxed">
-            Smart and scalable systems for modern workforce growth.
+          <p className="mt-6 text-[#667085] text-base md:text-lg leading-relaxed">
+            TrustEd partners with organizations, HR teams, compliance
+            departments, and operational leaders to design structured learning
+            systems that improve onboarding, workforce development, internal
+            training, and employee performance.
           </p>
         </div>
 
-        {/* New Layout */}
+        {/* Cards */}
         <div className="grid md:grid-cols-3 gap-6">
 
           {categories.map((item, index) => {
@@ -93,7 +99,7 @@ const EducationCategories = () => {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-[#101828] text-2xl font-semibold tracking-[-0.03em] mb-4">
+                <h3 className="text-[#101828] text-2xl font-semibold tracking-[-0.03em] mb-4 leading-snug">
                   {item.title}
                 </h3>
 
@@ -104,7 +110,7 @@ const EducationCategories = () => {
                 {/* CTA */}
                 <button className="inline-flex items-center gap-2 text-[#0F172A] hover:text-[#2563EB] transition-all duration-300">
                   <span className="uppercase tracking-[0.16em] text-[10px] font-semibold">
-                    Explore
+                    Learn More
                   </span>
 
                   <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />

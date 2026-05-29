@@ -24,14 +24,11 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", href: "#hero" },
-    // { name: "Services", href: "#services" },
     { name: "About", href: "#about" },
     { name: "Solutions", href: "#solutions" },
+    { name: "Partnership", href: "#member" },
+    { name: "Training Systems", href: "#Programs" },
 
-    { name: "Programs", href: "#Programs" },
-    { name: "Membership", href: "#member" },
-
-    // { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -53,7 +50,7 @@ const Navbar = () => {
               <div className="w-12 h-12 rounded-2xl bg-[#F5F7FA] border border-[#E4E7EC] flex items-center justify-center overflow-hidden">
                 <img
                   src={TAlogo}
-                  alt="TrustEd Academy"
+                  alt="TrustEd"
                   className="w-9 h-9 object-contain transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
@@ -63,8 +60,8 @@ const Navbar = () => {
                   TrustEd
                 </h2>
 
-                <p className="text-[#667085] text-[12px] tracking-[0.18em] uppercase font-medium">
-                  Learning Architecture
+                <p className="text-[#667085] text-[11px] tracking-[0.18em] uppercase font-medium">
+                  Corporate Learning Systems
                 </p>
               </div>
             </Link>
@@ -90,7 +87,7 @@ const Navbar = () => {
                 to="#contact"
                 className="group inline-flex items-center gap-2 bg-[#0F172A] hover:bg-[#111827] text-white px-6 py-3 rounded-full transition-all duration-300 text-[14px] font-medium shadow-lg shadow-slate-200"
               >
-                Schedule Consultation
+                Schedule a Consultation
 
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
@@ -113,9 +110,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-white z-40 transition-all duration-500 xl:hidden ${isOpen
-          ? "opacity-100 visible"
-          : "opacity-0 invisible"
+        className={`fixed inset-0 bg-white z-40 transition-all duration-500 xl:hidden ${isOpen ? "opacity-100 visible" : "opacity-0 invisible"
           }`}
       >
         <div className="flex flex-col justify-center h-full px-8">
@@ -139,7 +134,7 @@ const Navbar = () => {
               onClick={() => setIsOpen(false)}
               className="inline-flex items-center gap-2 bg-[#0F172A] text-white px-7 py-4 rounded-full text-sm font-medium"
             >
-              Schedule Consultation
+              Schedule a Consultation
 
               <ArrowRight className="w-4 h-4" />
             </Link>

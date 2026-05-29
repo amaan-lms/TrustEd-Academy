@@ -6,7 +6,6 @@ import {
   FaYoutube,
   FaGlobe,
 } from "react-icons/fa6";
-import { HiOutlineMail } from "react-icons/hi";
 
 import TAlogo from "../assets/TrustEdAcademy.png";
 
@@ -19,7 +18,7 @@ const Footer = () => {
   ];
 
   const supportLinks = [
-    { name: "Privacy", path: "/privacy" },
+    { name: "Privacy Policy", path: "/privacy" },
     { name: "Terms", path: "/terms" },
     { name: "FAQ", path: "/faq" },
   ];
@@ -33,10 +32,8 @@ const Footer = () => {
 
   return (
     <footer className="relative bg-[#0F172A] overflow-hidden">
-
       {/* Background */}
       <div className="absolute inset-0 z-0">
-
         <div
           className="absolute inset-0 opacity-[0.04]"
           style={{
@@ -54,38 +51,31 @@ const Footer = () => {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10 pt-24 pb-10">
-
         {/* Top */}
         <div className="grid lg:grid-cols-12 gap-14 pb-16 border-b border-white/10">
-
           {/* Brand */}
           <div className="lg:col-span-5">
-
             <img
               src={TAlogo}
-              alt="TrustEd Academy"
+              alt="TrustEd Learning"
               className="h-20 w-auto object-contain mb-8"
             />
 
             <h3 className="text-white text-3xl md:text-4xl font-semibold tracking-[-0.04em] leading-tight max-w-lg">
-              Modern Learning
+              Structured Learning
               <span className="block text-white/50 font-light">
-                Built For Teams.
+                For Modern Organizations.
               </span>
             </h3>
 
             <p className="mt-6 text-white/60 text-sm leading-relaxed max-w-md">
-              Scalable instructional systems and workforce learning
-              experiences for modern organizations.
+              TrustEd helps organizations improve onboarding, workforce
+              development, compliance education, and internal learning systems.
             </p>
-
-            {/* Email CTA */}
-
           </div>
 
           {/* Links */}
           <div className="lg:col-span-7 grid sm:grid-cols-3 gap-10">
-
             {/* Navigation */}
             <div>
               <h4 className="text-white uppercase tracking-[0.2em] text-[11px] font-semibold mb-7">
@@ -106,10 +96,10 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Support */}
+            {/* Resources */}
             <div>
               <h4 className="text-white uppercase tracking-[0.2em] text-[11px] font-semibold mb-7">
-                Support
+                Resources
               </h4>
 
               <ul className="space-y-4">
@@ -129,7 +119,7 @@ const Footer = () => {
             {/* Social */}
             <div>
               <h4 className="text-white uppercase tracking-[0.2em] text-[11px] font-semibold mb-7">
-                Follow Us
+                Connect
               </h4>
 
               <div className="flex items-center gap-4 mb-8">
@@ -149,26 +139,24 @@ const Footer = () => {
               </div>
 
               <p className="text-white/50 text-sm leading-relaxed">
-                Helping organizations create smarter learning systems
-                and scalable workforce growth.
+                Modern workforce learning systems designed for onboarding,
+                training, and employee development.
               </p>
-
             </div>
           </div>
         </div>
 
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-5 pt-8">
-
           <p className="text-white/40 text-xs uppercase tracking-[0.16em] text-center md:text-left">
-            © 2026 TrustEd Academy. All Rights Reserved.
+            © 2026 TrustEd Learning. All Rights Reserved.
           </p>
 
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-[#2563EB] animate-pulse"></div>
 
             <span className="text-white/40 text-xs uppercase tracking-[0.16em]">
-              Enterprise Learning Systems
+              Workforce Learning Systems
             </span>
           </div>
         </div>

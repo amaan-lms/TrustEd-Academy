@@ -4,13 +4,16 @@ import {
   Play,
   Building2,
   Layers3,
-  GraduationCap,
+  BriefcaseBusiness,
   CheckCircle2,
 } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section id='hero' className="relative min-h-screen overflow-hidden bg-[#F8FAFC] pt-26 pb-20">
+    <section
+      id="hero"
+      className="relative min-h-screen overflow-hidden bg-[#F8FAFC] pt-26 pb-20"
+    >
 
       {/* Background */}
       <div className="absolute inset-0 z-0">
@@ -41,20 +44,24 @@ const Hero = () => {
 
             {/* Heading */}
             <div className="space-y-8">
-              <h1 className="text-[#0F172A] text-5xl md:text-7xl xl:text-[70px] font-semibold tracking-[-0.06em] leading-[0.92]">
-                Learning
+
+
+
+              <h1 className="text-[#0F172A] text-5xl md:text-7xl xl:text-[74px] font-semibold tracking-[-0.06em] leading-[0.92]">
+                Structured
                 <br />
-                Architecture
+                Training Systems
                 <span className="block text-[#94A3B8] font-light">
-                  For Modern Teams.
+                  For Modern Organizations.
                 </span>
               </h1>
 
               <p className="max-w-2xl text-[#475467] text-md md:text-xl leading-relaxed font-light">
-                TrustEd Academy designs scalable instructional systems,
-                corporate learning experiences, and strategic education
-                frameworks for organizations that want measurable learning
-                outcomes and modern workforce development.
+                TrustEd helps corporations, HR teams, and operational leaders
+                build clearer onboarding systems, compliance education,
+                workforce learning programs, and scalable instructional design
+                solutions that improve employee performance and organizational
+                learning outcomes.
               </p>
             </div>
 
@@ -62,7 +69,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-5 mt-12">
 
               <button className="group inline-flex items-center gap-3 bg-[#0F172A] hover:bg-black text-white px-8 py-4 rounded-full text-sm font-medium transition-all duration-300 shadow-xl shadow-slate-200">
-                Schedule Consultation
+                Schedule a Consultation
 
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
@@ -70,41 +77,28 @@ const Hero = () => {
               <button className="group inline-flex items-center gap-3 border border-[#D0D5DD] hover:border-[#0F172A] bg-white text-[#0F172A] px-8 py-4 rounded-full text-sm font-medium transition-all duration-300">
                 <Play className="w-4 h-4 fill-current" />
 
-                View Services
+                Explore Solutions
               </button>
             </div>
 
-            {/* Metrics */}
-            {/* <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-10 border-t border-[#E4E7EC]">
-              {[
-                {
-                  number: "120+",
-                  label: "Learning Systems",
-                },
-                {
-                  number: "40+",
-                  label: "Enterprise Clients",
-                },
-                {
-                  number: "Global",
-                  label: "Remote Delivery",
-                },
-                {
-                  number: "98%",
-                  label: "Completion Rates",
-                },
-              ].map((item, i) => (
-                <div key={i}>
-                  <h3 className="text-[#0F172A] text-3xl font-semibold tracking-[-0.04em]">
-                    {item.number}
-                  </h3>
+            {/* Enterprise Tags */}
+            <div className="flex flex-wrap gap-3 mt-14">
 
-                  <p className="mt-2 text-[#667085] text-sm uppercase tracking-[0.14em]">
-                    {item.label}
-                  </p>
+              {[
+                "Corporate Training",
+                "Instructional Design",
+                "Compliance Learning",
+                "LMS Development",
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="px-4 py-2 rounded-full bg-white border border-[#E4E7EC] text-[#344054] text-sm font-medium"
+                >
+                  {item}
                 </div>
               ))}
-            </div> */}
+            </div>
+
           </div>
 
           {/* Right Visual */}
@@ -120,16 +114,16 @@ const Hero = () => {
               <div className="flex items-center justify-between mb-10">
                 <div>
                   <p className="text-[#98A2B3] uppercase tracking-[0.16em] text-[10px] font-semibold mb-2">
-                    TrustEd Academy
+                    TrustEd Corporate Learning Systems
                   </p>
 
                   <h3 className="text-[#0F172A] text-2xl font-semibold tracking-[-0.03em]">
-                    Strategic Learning
+                    Workforce Learning
                   </h3>
                 </div>
 
                 <div className="w-12 h-12 rounded-xl bg-[#0F172A] flex items-center justify-center">
-                  <GraduationCap className="w-6 h-6 text-white" />
+                  <BriefcaseBusiness className="w-6 h-6 text-white" />
                 </div>
               </div>
 
@@ -138,18 +132,21 @@ const Hero = () => {
                 {[
                   {
                     icon: Building2,
-                    title: "Corporate Learning Systems",
-                    desc: "Scalable enterprise training frameworks.",
+                    title: "Corporate Training Systems",
+                    desc:
+                      "Structured learning systems designed for employee development and operational growth.",
                   },
                   {
                     icon: Layers3,
                     title: "Instructional Design Strategy",
-                    desc: "Structured curriculum and learning architecture.",
+                    desc:
+                      "Clear learning architecture built around business objectives and learner performance.",
                   },
                   {
                     icon: CheckCircle2,
-                    title: "Performance-Based Outcomes",
-                    desc: "Designed around measurable learner success.",
+                    title: "Compliance & Onboarding",
+                    desc:
+                      "Modern onboarding and compliance education designed for scalable workforce delivery.",
                   },
                 ].map((item, i) => (
                   <div
@@ -176,7 +173,7 @@ const Hero = () => {
               {/* Bottom Label */}
               <div className="mt-7 pt-5 border-t border-[#EAECF0] flex items-center justify-between">
                 <p className="text-[#98A2B3] text-[10px] uppercase tracking-[0.16em]">
-                  Modern Learning Infrastructure
+                  Structured Learning Infrastructure
                 </p>
 
                 <ArrowRight className="w-4 h-4 text-[#0F172A]" />
@@ -186,17 +183,18 @@ const Hero = () => {
             {/* Floating Card */}
             <div className="absolute -bottom-5 -left-5 bg-white border border-[#E4E7EC] rounded-2xl px-4 py-4 shadow-xl hidden md:block">
               <p className="text-[#98A2B3] text-[10px] uppercase tracking-[0.16em] mb-1">
-                Active Consulting
+                Enterprise Learning Support
               </p>
 
               <h4 className="text-[#0F172A] text-xl font-semibold tracking-[-0.03em]">
-                24 Enterprise
+                Training-Focused
               </h4>
 
               <p className="text-[#667085] text-xs mt-1">
-                organizations currently supported
+                instructional design systems for modern organizations
               </p>
             </div>
+
           </div>
 
         </div>

@@ -4,37 +4,45 @@ import { ArrowRight } from "lucide-react";
 const FeaturedCourses = () => {
   const courses = [
     {
-      title: "Leadership",
-      desc: "Build confident modern leaders.",
+      title: "Leadership Development",
+      desc:
+        "Training programs focused on communication, management, and team performance.",
       image:
         "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop",
     },
+
     {
-      title: "Onboarding",
-      desc: "Smooth employee onboarding systems.",
+      title: "Employee Onboarding",
+      desc:
+        "Modern onboarding systems that improve employee readiness and workforce integration.",
       image:
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
     },
+
     {
-      title: "Learning Design",
-      desc: "Scalable instructional frameworks.",
+      title: "Instructional Design",
+      desc:
+        "Learning frameworks built to support scalable workforce education and training delivery.",
       image:
         "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop",
     },
+
     {
-      title: "Digital Learning",
-      desc: "Modern virtual learning experiences.",
+      title: "Digital Learning & LMS",
+      desc:
+        "Scalable digital learning environments designed for modern organizations.",
       image:
         "https://images.unsplash.com/photo-1516321165247-4aa89a48be28?q=80&w=1200&auto=format&fit=crop",
     },
   ];
 
   return (
-    <section id='Programs' className="relative py-14 bg-white overflow-hidden">
-
+    <section
+      id="Programs"
+      className="relative py-20 bg-white overflow-hidden"
+    >
       {/* Background */}
       <div className="absolute inset-0 z-0">
-
         <div
           className="absolute inset-0 opacity-[0.03]"
           style={{
@@ -50,40 +58,36 @@ const FeaturedCourses = () => {
       </div>
 
       <div className="relative z-10 max-w-[1300px] mx-auto px-6 lg:px-10">
-
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-
+        <div className="text-center max-w-4xl mx-auto mb-16">
           <span className="text-[#2563EB] uppercase tracking-[0.22em] text-[10px] font-semibold">
-            Learning Programs
+            Learning & Workforce Solutions
           </span>
 
           <h2 className="mt-5 text-[#0F172A] text-4xl md:text-5xl font-semibold tracking-[-0.05em] leading-[1.05]">
-            Modern Courses
+            Strategic Learning
             <span className="block text-[#94A3B8] font-light">
-              For Growing Teams.
+              For Modern Organizations.
             </span>
           </h2>
 
-          <p className="mt-6 text-[#667085] text-base leading-relaxed">
-            Scalable learning systems designed for workforce growth.
+          <p className="mt-6 text-[#667085] text-base md:text-lg leading-relaxed max-w-3xl mx-auto">
+            TrustEd creates training systems, onboarding frameworks, and
+            digital learning solutions that improve workforce development and
+            employee performance.
           </p>
         </div>
 
-        {/* Redesigned Layout */}
+        {/* Layout */}
         <div className="grid md:grid-cols-2 gap-6">
-
           {courses.map((course, index) => (
             <div
               key={index}
               className="group bg-white border border-[#E4E7EC] rounded-[28px] overflow-hidden hover:-translate-y-2 transition-all duration-500 hover:shadow-[0_20px_60px_rgba(15,23,42,0.08)]"
             >
-
               <div className="grid md:grid-cols-2 h-full">
-
                 {/* Image */}
                 <div className="relative h-[240px] md:h-full overflow-hidden">
-
                   <img
                     src={course.image}
                     alt={course.title}
@@ -95,12 +99,11 @@ const FeaturedCourses = () => {
 
                 {/* Content */}
                 <div className="p-8 flex flex-col justify-center">
-
                   <span className="text-[#2563EB] uppercase tracking-[0.18em] text-[10px] font-semibold mb-4">
-                    Featured Program
+                    Workforce Solution
                   </span>
 
-                  <h3 className="text-[#101828] text-2xl font-semibold tracking-[-0.03em] mb-4">
+                  <h3 className="text-[#101828] text-2xl font-semibold tracking-[-0.03em] mb-4 leading-snug">
                     {course.title}
                   </h3>
 
