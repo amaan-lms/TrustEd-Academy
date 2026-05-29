@@ -47,7 +47,7 @@ const Hero = () => {
 
 
 
-              <h1 className="text-[#0F172A] text-5xl md:text-7xl xl:text-[74px] font-semibold tracking-[-0.06em] leading-[0.92]">
+              <h1 className="text-[#0F172A] text-5xl md:text-6xl xl:text-[64px] font-semibold tracking-[-0.06em] leading-[0.92]">
                 Structured
                 <br />
                 Training Systems
@@ -56,7 +56,7 @@ const Hero = () => {
                 </span>
               </h1>
 
-              <p className="max-w-2xl text-[#475467] text-md md:text-xl leading-relaxed font-light">
+              <p className="max-w-2xl text-[#475467] text-md md:text-lg leading-relaxed font-light">
                 TrustEd helps corporations, HR teams, and operational leaders
                 build clearer onboarding systems, compliance education,
                 workforce learning programs, and scalable instructional design
@@ -82,7 +82,7 @@ const Hero = () => {
             </div>
 
             {/* Enterprise Tags */}
-            <div className="flex flex-wrap gap-3 mt-14">
+            <div className="flex flex-wrap gap-2 mt-14">
 
               {[
                 "Corporate Training",
